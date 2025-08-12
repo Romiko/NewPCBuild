@@ -9,6 +9,7 @@
     - Mounts the temp WIM, injects one or more driver folders (recursively), commits.
     - Copies the updated WIM back to the USB.
     - Tip of the day: Run the NVidia Install Game Ready, however do not proceed, copy the contents of the extracted files first to D:\drivers\NvidiaDrivers\Display.Driver
+    - NVidia drivers are huge, not necessary but great if you want to smooth Windows Install experience. You can always install it later.
 
 .PARAMETER UsbWimPath
     Path to the install.wim on your USB (must be on NTFS).
@@ -26,9 +27,8 @@
     Temp working copy path for the WIM. Default: $env:TEMP\install_work.wim
 
 .EXAMPLE
-    .\inject-wimDrivers `
-      -UsbWimPath 'J:\sources\install.wim' `
-      -DriverPaths 'D:\drivers\NvidiaDrivers\Display.Driver','D:\drivers\MS870EAMD'
+    .\inject-wimDrivers -UsbWimPath 'J:\sources\install.wim' -DriverPaths 'D:\drivers\NvidiaDrivers\Display.Driver','D:\drivers\MS870EAMD'
+    .\inject-wimDrivers -UsbWimPath 'J:\sources\install.wim' -DriverPaths 'D:\drivers\MS870EAMD'
 
 .NOTES
     Requires elevated PowerShell.
