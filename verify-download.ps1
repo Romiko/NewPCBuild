@@ -1,0 +1,1 @@
+Get-FileHash D:\Users\Rom\Downloads\Win11_24H2_EnglishInternational_x64.iso

@@ -1,0 +1,24 @@
+# Create Bootable USB
+
+## Easiest: Rufus
+1. Download Rufus (portable).
+2. Insert an 8GB+ USB drive.
+3. Select your Windows ISO (modified one if you used slipstream).
+4. Partition scheme: GPT, Target system: UEFI (non-CSM).
+5. START.
+
+## DiskPart (if you must)
+1. Run CMD as admin:
+   diskpart
+2. List disks:
+   list disk
+3. Select your USB (double-check number!):
+   select disk X
+4. Clean and format:
+   clean
+   convert gpt
+   create part primary
+   format fs=ntfs quick
+   assign
+   exit
+5. Mount ISO and copy all files to the USB root.
